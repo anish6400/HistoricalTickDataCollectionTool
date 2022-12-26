@@ -12,6 +12,9 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
         private static TextBox txtBoxLogs;
         private static StringBuilder logStr;
 
+        /*
+            Make sure Init() is called before any other functions 
+        */
         public static void Init(TextBox txtBoxLogs)
         {
             Logger.txtBoxLogs = txtBoxLogs;
