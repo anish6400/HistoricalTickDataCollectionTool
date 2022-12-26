@@ -2,7 +2,6 @@
 
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using NinjaTrader.Core;
 using NinjaTrader.Gui;
 using NinjaTrader.Gui.Tools;

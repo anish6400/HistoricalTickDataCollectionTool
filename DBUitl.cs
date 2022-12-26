@@ -1,11 +1,5 @@
 using System;
-using System.Runtime;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
