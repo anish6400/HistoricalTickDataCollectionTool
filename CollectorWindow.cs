@@ -21,6 +21,9 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
         private void CollectorWindow_Load(object sender, EventArgs e)
         {
             PopulateAssets();
+
+            // Initialize logger by passing logs text box
+            Logger.Init(txtBoxLogs);
         }
 
         private void PopulateAssets()

@@ -126,8 +126,11 @@
             this.txtBoxLogs.Location = new System.Drawing.Point(3, 103);
             this.txtBoxLogs.Multiline = true;
             this.txtBoxLogs.Name = "txtBoxLogs";
-            this.txtBoxLogs.Size = new System.Drawing.Size(430, 454);
+            this.txtBoxLogs.ReadOnly = true;
+            this.txtBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtBoxLogs.Size = new System.Drawing.Size(430, 407);
             this.txtBoxLogs.TabIndex = 2;
+            this.txtBoxLogs.WordWrap = false;
             // 
             // panel3
             // 
