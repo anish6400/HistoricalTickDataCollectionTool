@@ -7,6 +7,8 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
 {
     public partial class CollectorWindow : Form
     {
+        private Thread dataCollectionThread;
+        private DataCollectionLogic dcLogic;
         public CollectorWindow()
         {
             InitializeComponent();
@@ -49,7 +51,7 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
                 }
             }
 
-            for (int month = 3; month < currMonth; month += 3)
+            for (int month = 3; month <= currMonth; month += 3)
             {
                 Contract contract = new Contract(cBoxAssets.Text, month, currYear);
                 contractsList.Items.Add(contract);
@@ -66,11 +68,17 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
 
             Progress progressObj = new Progress(lblProgress, progressBar);
 
-            DataCollectionLogic dcThread = new DataCollectionLogic(selectedContracts, progressObj);
+            dcLogic = new DataCollectionLogic(selectedContracts, progressObj);
 
-            Thread dataCollectionThread = new Thread(() => dcThread.StartCollection());
+            dataCollectionThread = new Thread(() => dcLogic.StartCollection());
             dataCollectionThread.IsBackground = true;
             dataCollectionThread.Start();
+        }
+
+        private void CollectorWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dcLogic.KillBarsRequest();
+            dataCollectionThread.Abort();
         }
     }
 }

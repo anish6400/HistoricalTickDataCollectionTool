@@ -273,6 +273,7 @@
             this.MaximizeBox = false;
             this.Name = "CollectorWindow";
             this.Text = "Historical Tick Data Collection Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CollectorWindow_FormClosing);
             this.Load += new System.EventHandler(this.CollectorWindow_Load);
             this.pntBottomBar.ResumeLayout(false);
             this.pnlLists.ResumeLayout(false);

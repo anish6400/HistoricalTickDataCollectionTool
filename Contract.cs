@@ -1,3 +1,4 @@
+using NinjaTrader.Cbi;
 using System;
 
 namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
@@ -45,6 +46,11 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
         public int EndYear { get { return endYear; } }
         public DateTime StartDate { get { return startDate; } }
         public DateTime EndDate { get { return endDate; } }
+
+        public Instrument GetNTInstrument()
+        {
+            return Instrument.GetInstrument(ToString());
+        }
 
         public override string ToString()
         {

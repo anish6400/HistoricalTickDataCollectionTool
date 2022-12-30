@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
 {
@@ -24,6 +25,14 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
                 throw new Exception(String.Format("No {0} occurance(s) of {1} in the required month", occurance, Day.ToString()));
 
             return new DateTime(year, month, resultedDay);
+        }
+
+        public static float GetPercentageElapsed(DateTime startTime, DateTime endTime, DateTime currTime)
+        {
+            double totalTime = (endTime - startTime).TotalMinutes;
+            double elpasedTime = (currTime - startTime).TotalMinutes;
+
+            return (float)((elpasedTime * 100) / totalTime);
         }
     }
 }
