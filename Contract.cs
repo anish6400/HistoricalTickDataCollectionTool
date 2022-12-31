@@ -16,12 +16,12 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
         private int endYear;
         private DateTime endDate;
 
-        // Sets the startDate to the sunday after 3rd friday of startMonth
+        // Sets the startDate to the sunday after 2nd friday of startMonth
         private void SetStartDate()
         {
             DateTime sampleStartDate = new DateTime(endYear, endMonth, 1).AddMonths(-3);
 
-            DateTime thirdFridayOfMonth = Utils.FindDay(sampleStartDate.Year, sampleStartDate.Month, DayOfWeek.Friday, 3);
+            DateTime thirdFridayOfMonth = Utils.FindDay(sampleStartDate.Year, sampleStartDate.Month, DayOfWeek.Friday, 2);
 
             startDate = thirdFridayOfMonth.AddDays(2);
         }

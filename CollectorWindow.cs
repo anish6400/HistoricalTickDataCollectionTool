@@ -42,7 +42,7 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
             int currMonth = DateTime.Now.Month;
             int currYear = DateTime.Now.Year;
 
-            for (int year = 2018; year < currYear; year++)
+            for (int year = 2020; year < currYear; year++)
             {
                 for (int month = 3; month <= 12; month += 3)
                 {
@@ -73,12 +73,17 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
             dataCollectionThread = new Thread(() => dcLogic.StartCollection());
             dataCollectionThread.IsBackground = true;
             dataCollectionThread.Start();
+
+            startCollectionBtn.Enabled = false;
         }
 
         private void CollectorWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            dcLogic.KillBarsRequest();
-            dataCollectionThread.Abort();
+            if (dcLogic != null && dataCollectionThread != null)
+            {
+                dcLogic.KillBarsRequest();
+                dataCollectionThread.Abort();
+            }
         }
     }
 }
