@@ -36,8 +36,6 @@ namespace NinjaTrader.Custom.AddOns.HistoricalTickDataCollectionTool
 
             for (DateTime dt = contract.StartDate; dt <= contract.EndDate; dt = dt.AddDays(1))
             {
-                Logger.LogMessage(dt.ToString());
-
                 barsRequestObj = new BarsRequest(contract.GetNTInstrument(), dt, dt);
                 barsRequestObj.BarsPeriod = new BarsPeriod() { BarsPeriodType = BarsPeriodType.Tick, Value = 1 };
                 barsRequestObj.TradingHours = TradingHours.Get("CME US Index Futures ETH");
