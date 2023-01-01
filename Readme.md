@@ -8,8 +8,9 @@ Ninjatrader is able to get the historical data from the connected exchange for t
 2. Paste the extracted folder inside directory: {Your Documents Folder}\Ninjatrader 8\Cutom\AddOns\
 3. Launch Ninjatraer
 4. Launch Ninjascript Editor. New > Ninjascript Editor
-5. Compile the project using the compile button in the top bar of the editor window.
-6. Go back to Ninjatrader and launch this tool from Tools > HistoricalTickDataCollectionTool
+5. Right Click empty space of Ninjascript Editor and click References. Add the dll files in dlls folder as references.
+6. Compile the project using the compile button in the top bar of the editor window.
+7. Go back to Ninjatrader and launch this tool from Tools > HistoricalTickDataCollectionTool
 
 ## Screenshot
 
