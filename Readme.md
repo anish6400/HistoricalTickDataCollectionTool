@@ -11,6 +11,10 @@ Ninjatrader is able to get the historical data from the connected exchange for t
 5. Compile the project using the compile button in the top bar of the editor window.
 6. Go back to Ninjatrader and launch this tool from Tools > HistoricalTickDataCollectionTool
 
+## Screenshot
+
+![img](https://i.imgur.com/2IKcXCa.png)
+
 ## Usage
 
 1. Make sure you have already downloaded the required data using Ninjatrader's builtin Historical Data tool.
@@ -18,7 +22,11 @@ Ninjatrader is able to get the historical data from the connected exchange for t
 3. In the left panel, select the contracts you want to get the data for. (currently only supports ES, NQ, ZB, ZN)
 4. Click "Start Collection" button.
 
-After the collection process is completed the txt file would be organized under this folder: {Your Documents Folder}\HistoricalTickData. The structure of tick data inside those txt files should look like this:
+After the collection process is completed the txt file would be organized under this folder: {Your Documents Folder}\HistoricalTickData.
+
+## Format
+
+The structure of tick data inside those txt files should look like this:
 
 | Time in milliseconds     | Bid     | Ask    | Price  | Volume |
 | ------------------------ | ------- | ------ | ------ | ------ |
